@@ -1,0 +1,2 @@
+rootProject.name='Personalized Safari app'
+include ':app'
