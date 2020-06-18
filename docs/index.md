@@ -32,7 +32,7 @@
      
 ## Entity-Relationship Diagram (ERD)
 
-   [erd](erd.md)
+   [Entity-relationship diagram](erd.md)
      
 ## Cloud - or device-based services or data
 
@@ -46,11 +46,11 @@
         * information on parks and wildlife (if needed through links) 
         
    * **Device features**
-        * [geo location](https://developer.android.com/training/location)
+        * [Geo location](https://developer.android.com/training/location)
             > Twendé will use the device geolocation in relation to the POI's or the accomodation. 
             > When no network available, this part of the app will not be accessible but this will
             > not affect the rest of the app.
-        * [clock](https://developer.android.com/reference/android/os/SystemClock)
+        * [Clock](https://developer.android.com/reference/android/os/SystemClock)
             > The clock and calendar will be linked to the daily trips in a way that the relevant
             > day shows up on the home screen. Since the clock and calendar run independtly of the
             > available network, these data will be accessible at all times. 

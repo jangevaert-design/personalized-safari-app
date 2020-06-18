@@ -1,1 +1,4 @@
 theme: jekyll-theme-slate
+title: Twendé
+titles_from_headings:
+  enabled: false
