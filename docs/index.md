@@ -17,7 +17,7 @@
    * **Travelers who need additional and easy accessible information.**
         >  As a travel journalist, this app allows me to focus more on my wildlife photography 
         > instead of taking notes because it gives me all the information on the lodges where I
-        > will stay at and the National Parks to visit.
+        > will stay at, and the National Parks to visit.
         
    * **First time Africa-travelers.**
         >  This app is great for us, who are going for the first time on safari because it offers us 
@@ -28,11 +28,11 @@
         
 ## Wireframe Diagram      
         
-       [Wireframe diagram](wireframe.md)
+   [Wireframe diagram](wireframe.md)
      
 ## Entity-Relationship Diagram (ERD)
 
-       [erd](erd.md)
+   [erd](erd.md)
      
 ## Cloud - or device-based services or data
 
@@ -55,7 +55,7 @@
             > day shows up on the home screen. Since the clock and calendar run independtly of the
             > available network, these data will be accessible at all times. 
        
-   * **Cloud based services
+   * **Cloud based services**
         * [Google maps](https://developers.google.com/maps/documentation/android-sdk/intro)
             > Google Maps will be used as a means to restore the safari through Google Maps' 
             > history. When out of range of network, the app will work fine but this cloud based
