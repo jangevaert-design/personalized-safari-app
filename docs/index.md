@@ -13,13 +13,13 @@
 > list of accommodations. 
 >
 ## Intended users & user stories
->
-    * **Travelers who need additional and easy accessible information.**
+
+   * **Travelers who need additional and easy accessible information.**
         >  As a travel journalist, this app allows me to focus more on my wildlife photography 
         > instead of taking notes because it gives me all the information on the lodges where I
         > will stay at and the National Parks to visit.
         
-    * **First time Africa-travelers.**
+   * **First time Africa-travelers.**
         >  This app is great for us, who are going for the first time on safari because it offers us 
         > a packing list plus additional information on the country and makes us feel comfortable 
         > knowing exactly what the activities and the placea we’ll stay at will be at any given day.
@@ -28,15 +28,15 @@
         
 ## Wireframe Diagram      
         
-     * [Wireframe diagram](wireframe.md)
+       [Wireframe diagram](wireframe.md)
      
 ## Entity-Relationship Diagram (ERD)
 
-     * [erd](erd.md)
+       [erd](erd.md)
      
 ## Cloud - or device-based services or data
 
-    * **Persistent device data**
+   * **Persistent device data**
         * name and contact information (to be entered by the client)
         * packing list, general information on the travel (documents, health, do’s-and-dont’s)
         * departure data to and from Tanzania (to be entered by the client)
@@ -45,7 +45,7 @@
         * list of lodges
         * information on parks and wildlife (if needed through links) 
         
-    * **Device features**
+   * **Device features**
         * [geo location](https://developer.android.com/training/location)
             > Twendé will use the device geolocation in relation to the POI's or the accomodation. 
             > When no network available, this part of the app will not be accessible but this will
@@ -55,7 +55,7 @@
             > day shows up on the home screen. Since the clock and calendar run independtly of the
             > available network, these data will be accessible at all times. 
        
-    * **Cloud based services
+   * **Cloud based services
         * [Google maps](https://developers.google.com/maps/documentation/android-sdk/intro)
             > Google Maps will be used as a means to restore the safari through Google Maps' 
             > history. When out of range of network, the app will work fine but this cloud based
