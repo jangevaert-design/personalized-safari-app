@@ -2,16 +2,17 @@
 
 ## Design description
 
-> Twendé - which means 'Let's go' in Tanzania's language Kiswahili - is a personalized safari app
-> for the guests of [Ajabu Adventures](https://ajabu-adventures.com/) and will guide them through 
-> every step of their pre- and actual travel.
-> Guests will be prompted to download the app one week prior to their departure and will fill out 
-> their names, contacts and departure date and time.
-> During the safari all general information will be available on the home screen and with one click
-> either the national parks, the list of lodges, or the POI's (Points of Interest) can be reached.
-> At this stage the app will use the most popular six days safari as the only itinerary with a fixed 
-> list of accommodations. 
->
+Twendé - which means 'Let's go' in Tanzania's language Kiswahili - is a personalized safari app
+for the guests of [Ajabu Adventures](https://ajabu-adventures.com/) and will guide them through 
+every step of their pre- and actual travel.
+Guests will be prompted to download the app one week prior to their departure and will fill out 
+their names, contacts and departure date and time.
+During the safari all general information will be available on the home screen and with one click
+either the national parks, the list of lodges, the POI's (Points of Interest), or the general
+information can be reached.
+At this stage the app will use the most popular six days safari as the only itinerary with a fixed 
+list of accommodations. 
+
 ## Intended users & user stories
 
    * **Travelers who need additional and easy accessible information.**
