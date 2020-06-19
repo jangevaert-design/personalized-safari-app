@@ -23,7 +23,7 @@ list of accommodations.
    * **First time Africa-travelers.**
         >  This app is great for us, who are going for the first time on safari because it offers us 
         > a packing list plus additional information on the country and makes us feel comfortable 
-        > knowing exactly what the activities and the placea we’ll stay at will be at any given day.
+        > knowing exactly what the activities, and the place we’ll stay at will be at any given day.
         > Furthermore we will be having all our contact information (at home as well for
         > the tour company) stored in the app and ready with one click.
         
@@ -41,14 +41,14 @@ list of accommodations.
         * name and contact information (to be entered by the client)
         * packing list, general information on the travel (documents, health, do’s-and-dont’s)
         * departure data to and from Tanzania (to be entered by the client)
-        * itenerary
+        * itinerary
         * list of national parks
         * list of lodges
         * information on parks and wildlife (if needed through links) 
         
    * **Device features**
         * [Geo location](https://developer.android.com/training/location)
-            > Twendé will use the device geolocation in relation to the POI's or the accomodation. 
+            > Twendé will use the device geolocation in relation to the POI's or the accommodation. 
             > When no network available, this part of the app will not be accessible but this will
             > not affect the rest of the app.
         * [Clock](https://developer.android.com/reference/android/os/SystemClock)
