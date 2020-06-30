@@ -15,17 +15,14 @@ list of accommodations.
 
 ## Intended users & user stories
 
-   * **Travelers who need additional and easy accessible information.**
-        >  As a travel journalist, this app allows me to focus more on my wildlife photography 
-        > instead of taking notes because it gives me all the information on the lodges where I
-        > will stay at, and the National Parks to visit.
+   * **A travel journalist**
+        >  As a travel journalist I need a lot of information about the country, the national parks 
+           and the accommodations so that I can write meaningful travel updates.  
         
    * **First time Africa-travelers.**
-        >  This app is great for us, who are going for the first time on safari because it offers us 
-        > a packing list plus additional information on the country and makes us feel comfortable 
-        > knowing exactly what the activities, and the place we’ll stay at will be at any given day.
-        > Furthermore we will be having all our contact information (at home as well for
-        > the tour company) stored in the app and ready with one click.
+        > As a first time Africa traveler I need to understand what to expect and what we need to 
+          bring so that we can get the maximum out of our holiday.
+
         
 ## Wireframe Diagram      
         
