@@ -4,35 +4,41 @@
 CREATE TABLE IF NOT EXISTS `Accommodation`
 (
     `accommodation_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-    `name`      TEXT                              NOT NULL COLLATE NOCASE
+    `name`             TEXT                              NOT NULL COLLATE NOCASE,
+    `start`            INTEGER                           NOT NULL,
+    `end`              INTEGER                           NOT NULL,
+    `longitude`        REAL,
+    `latitude`         REAL
 );
-
-CREATE UNIQUE INDEX IF NOT EXISTS `index_Accommodation_name` ON `Accommodation` (`name`);
 
 CREATE TABLE IF NOT EXISTS `General`
 (
-    `general_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-/*    `name`      TEXT                              NOT NULL COLLATE NOCASE */
+    `general_id`  INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    `country`     TEXT                              NOT NULL COLLATE NOCASE,
+    `wildlife`    TEXT                              NOT NULL COLLATE NOCASE,
+    `packingList` TEXT                              NOT NULL COLLATE NOCASE,
+    `advice`      TEXT                              NOT NULL COLLATE NOCASE
 );
-
-/* CREATE UNIQUE INDEX IF NOT EXISTS `index_General` ON `General` (`name`); */ 
 
 CREATE TABLE IF NOT EXISTS `Itinerary`
 (
-    `itinerary_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-    `park_name`      TEXT                              NOT NULL COLLATE NOCASE
+    `itinerary_id`  INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    `parkName`      TEXT                              NOT NULL COLLATE NOCASE,
+    `numberOfMiles` INTEGER,
+    `start`         INTEGER                           NOT NULL,
+    `end`           INTEGER                           NOT NULL,
+    `location`      TEXT                              NOT NULL COLLATE NOCASE
 );
-
 
 CREATE TABLE IF NOT EXISTS `Poi`
 (
-    `poi_id`  INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-    `itinerary_id` INTEGER,
-    `text`      TEXT                              NOT NULL COLLATE NOCASE,
+    `poi_id`       INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    `itinerary_id` INTEGER                           NOT NULL,
+    `name`         TEXT                              NOT NULL COLLATE NOCASE,
+    `longitude`    REAL,
+    `latitude`     REAL,
     FOREIGN KEY (`itinerary_id`) REFERENCES `Itinerary` (`itinerary_id`) ON UPDATE NO ACTION ON DELETE SET NULL
-);
-
-CREATE INDEX IF NOT EXISTS `index_Poi_itinerary_id` ON `Poi` (`itinerary_id`);
+)
 ```
 
 [`ddl.sql`](sql/ddl.sql)

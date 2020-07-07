@@ -1,19 +1,38 @@
-CREATE TABLE IF NOT EXISTS `General`
+CREATE TABLE IF NOT EXISTS `Accommodation`
 (
-    `general_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-    `name`      TEXT                              NOT NULL COLLATE NOCASE
+    `accommodation_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    `name`             TEXT                              NOT NULL COLLATE NOCASE,
+    `start`            INTEGER                           NOT NULL,
+    `end`              INTEGER                           NOT NULL,
+    `longitude`        REAL,
+    `latitude`         REAL
 );
 
-CREATE UNIQUE INDEX IF NOT EXISTS `index_Source_name` ON `Source` (`name`);
+CREATE TABLE IF NOT EXISTS `General`
+(
+    `general_id`  INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    `country`     TEXT                              NOT NULL COLLATE NOCASE,
+    `wildlife`    TEXT                              NOT NULL COLLATE NOCASE,
+    `packingList` TEXT                              NOT NULL COLLATE NOCASE,
+    `advice`      TEXT                              NOT NULL COLLATE NOCASE
+);
 
 CREATE TABLE IF NOT EXISTS `Itinerary`
 (
     `itinerary_id`  INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-    `poi_id` INTEGER,
-    `text`      TEXT                              NOT NULL COLLATE NOCASE,
-    FOREIGN KEY (`poi_id`) REFERENCES `Poi` (`poi_id`) ON UPDATE NO ACTION ON DELETE SET NULL
+    `parkName`      TEXT                              NOT NULL COLLATE NOCASE,
+    `numberOfMiles` INTEGER,
+    `start`         INTEGER                           NOT NULL,
+    `end`           INTEGER                           NOT NULL,
+    `location`      TEXT                              NOT NULL COLLATE NOCASE
 );
 
-CREATE INDEX IF NOT EXISTS `index_Quote_source_id` ON `Quote` (`source_id`);
-
-//[ddl.md](docs/sql/ddl.sql)
+CREATE TABLE IF NOT EXISTS `Poi`
+(
+    `poi_id`       INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    `itinerary_id` INTEGER                           NOT NULL,
+    `name`         TEXT                              NOT NULL COLLATE NOCASE,
+    `longitude`    REAL,
+    `latitude`     REAL,
+    FOREIGN KEY (`itinerary_id`) REFERENCES `Itinerary` (`itinerary_id`) ON UPDATE NO ACTION ON DELETE SET NULL
+)

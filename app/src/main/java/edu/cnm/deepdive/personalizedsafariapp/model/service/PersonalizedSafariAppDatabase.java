@@ -23,7 +23,6 @@ import java.util.Date;
     exportSchema = true
 )
 @TypeConverters({Converters.class})
-//keep right after @Database annotation
 
 public abstract class PersonalizedSafariAppDatabase extends RoomDatabase {
 

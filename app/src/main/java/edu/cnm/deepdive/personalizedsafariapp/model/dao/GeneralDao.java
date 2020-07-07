@@ -17,24 +17,23 @@ import java.util.List;
 public interface GeneralDao {
 
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
-    Single<Long> insert(General general);
+  @Insert(onConflict = OnConflictStrategy.IGNORE)
+  Single<Long> insert(General general);
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
-    Single<List<Long>> insert(Collection<General> generals);
+  @Insert(onConflict = OnConflictStrategy.IGNORE)
+  Single<List<Long>> insert(Collection<General> generals);
 
-    @Update
-    Single<Integer> update(General... generals);
+  @Update
+  Single<Integer> update(General... generals);
 
-    @Delete
-    Single<Integer> delete(General...generals);
+  @Delete
+  Single<Integer> delete(General... generals);
 
-    @Query("SELECT * FROM General")
-    LiveData<List<General>> selectAll();
+  @Query("SELECT * FROM General")
+  LiveData<List<General>> selectAll();
 
-    @Query("SELECT * FROM General WHERE general_id = :generalId")
-    Single<General> selectById(long generalId);
-
+  @Query("SELECT * FROM General WHERE general_id = :generalId")
+  Single<General> selectById(long generalId);
 
 
 }

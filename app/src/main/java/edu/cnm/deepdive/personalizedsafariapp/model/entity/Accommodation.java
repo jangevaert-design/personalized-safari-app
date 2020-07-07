@@ -39,24 +39,36 @@ public class Accommodation {
     return id;
   }
 
-  public void setId(long id) { this.id = id; }
+  public void setId(long id) {
+    this.id = id;
+  }
 
   @NonNull
-  public String getName() { return name; }
+  public String getName() {
+    return name;
+  }
 
   public void setName(@NonNull String name) {
     this.name = name;
   }
 
   @NonNull
-  public Date getStart() { return start; }
+  public Date getStart() {
+    return start;
+  }
 
-  public void setStart(@NonNull Date start) {this.start = start; }
+  public void setStart(@NonNull Date start) {
+    this.start = start;
+  }
 
   @NonNull
-  public Date getEnd() { return end; }
+  public Date getEnd() {
+    return end;
+  }
 
-  public void setEnd(@NonNull Date end) { this.end = end; }
+  public void setEnd(@NonNull Date end) {
+    this.end = end;
+  }
 
   public Double getLongitude() {
     return longitude;

@@ -14,7 +14,6 @@ import java.util.List;
 public class PoiRepository {
 
 
-
   private final Context context;
   private final PersonalizedSafariAppDatabase database;
   private final ItineraryDao itineraryDao;
@@ -49,7 +48,8 @@ public class PoiRepository {
 
   public Completable delete(Poi poi) {
     if (poi.getId() == 0) {
-      return Completable.fromAction(() -> {})
+      return Completable.fromAction(() -> {
+      })
           .subscribeOn(Schedulers.io());
     } else {
       return Completable.fromSingle(poiDao.delete(poi))

@@ -36,8 +36,6 @@ public class Poi {
   private Double latitude;
 
 
-
-
   public long getId() {
     return id;
   }

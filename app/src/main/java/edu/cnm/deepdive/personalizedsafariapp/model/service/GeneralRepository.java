@@ -7,6 +7,7 @@ import io.reactivex.Completable;
 import io.reactivex.schedulers.Schedulers;
 
 public class GeneralRepository {
+
   private final Context context;
   private final PersonalizedSafariAppDatabase database;
   private final GeneralDao generalDao;
@@ -30,7 +31,8 @@ public class GeneralRepository {
 
   public Completable delete(General general) {
     if (general.getId() == 0) {
-      return Completable.fromAction(() -> {})
+      return Completable.fromAction(() -> {
+      })
           .subscribeOn(Schedulers.io());
     } else {
       return Completable.fromSingle(generalDao.delete(general))

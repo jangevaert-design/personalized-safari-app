@@ -35,7 +35,6 @@ public class Itinerary {
   private String location = "";
 
 
-
   public long getId() {
     return id;
   }

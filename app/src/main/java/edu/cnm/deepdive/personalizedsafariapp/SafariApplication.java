@@ -6,6 +6,7 @@ import edu.cnm.deepdive.personalizedsafariapp.model.service.PersonalizedSafariAp
 import io.reactivex.schedulers.Schedulers;
 
 public class SafariApplication extends Application {
+
   @Override
   public void onCreate() {
     super.onCreate();

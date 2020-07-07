@@ -19,7 +19,6 @@ import java.util.List;
 public interface PoiDao {
 
 
-  //why two inserts here?
   @Insert(onConflict = OnConflictStrategy.IGNORE)
   Single<Long> insert(Poi poi);
 

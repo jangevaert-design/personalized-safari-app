@@ -47,7 +47,8 @@ public class ItineraryRepository {
 
   public Completable delete(Itinerary itinerary) {
     if (itinerary.getId() == 0) {
-      return Completable.fromAction(() -> {})
+      return Completable.fromAction(() -> {
+      })
           .subscribeOn(Schedulers.io());
     } else {
       return Completable.fromSingle(itineraryDao.delete(itinerary))
