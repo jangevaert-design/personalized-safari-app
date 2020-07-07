@@ -60,7 +60,7 @@ public class General {
     return packingList;
   }
 
-  public void setPacking_list(@NonNull String packing_list) {
+  public void setPackingList(@NonNull String packing_list) {
     this.packingList = packingList;
   }
 

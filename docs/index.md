@@ -16,12 +16,14 @@ list of accommodations.
 ## Intended users & user stories
 
    * **A travel journalist**
-        >  As a travel journalist I need a lot of information about the country, the national parks 
-           and the accommodations so that I can write meaningful travel updates.  
+        >  As a travel journalist who writes for high end travel magazines I need up-to-date and
+           correct information about the country, the national parks and the accommodations so that
+           I can share meaningful travel updates to our readers.  
         
    * **First time Africa-travelers.**
-        > As a first time Africa traveler I need to understand what to expect and what we need to 
-          bring so that we can get the maximum out of our holiday.
+        > As a first time Africa traveler I need to understand how our itineraries and 
+          accommodations will look and what we need to bring so that we can get the maximum 
+          out of our holiday.
 
         
 ## Wireframe Diagram      
@@ -58,5 +60,12 @@ list of accommodations.
             > Google Maps will be used as a means to restore the safari through Google Maps' 
             > history. When out of range of network, the app will work fine but this cloud based
             > feature will not be available.
+                                                                                                 
+### [Entity classes](https://github.com/jangevaert-design/personalized-safari-app/tree/master/app/src/main/java/edu/cnm/deepdive/personalizedsafariapp/model/entity)
+        
+### [DAO interfaces](https://github.com/jangevaert-design/personalized-safari-app/tree/master/app/src/main/java/edu/cnm/deepdive/personalizedsafariapp/model/dao)
+   
+### [Database & Repository classes](https://github.com/jangevaert-design/personalized-safari-app/tree/master/app/src/main/java/edu/cnm/deepdive/personalizedsafariapp/model/service)                                                                                              
+                                                                                                 
     
     

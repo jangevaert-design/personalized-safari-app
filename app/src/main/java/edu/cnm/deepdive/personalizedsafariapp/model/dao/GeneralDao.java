@@ -6,7 +6,6 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
-import androidx.room.Transaction;
 import androidx.room.Update;
 import edu.cnm.deepdive.personalizedsafariapp.model.entity.General;
 import io.reactivex.Single;
@@ -30,15 +29,14 @@ public interface GeneralDao {
     @Delete
     Single<Integer> delete(General...generals);
 
-//how to ORDER BY
-    @Query("SELECT * FROM General ORDER BY ")
+    @Query("SELECT * FROM General")
     LiveData<List<General>> selectAll();
-
 
     @Query("SELECT * FROM General WHERE general_id = :generalId")
     Single<General> selectById(long generalId);
 
 
-  }
+
+}
 
 

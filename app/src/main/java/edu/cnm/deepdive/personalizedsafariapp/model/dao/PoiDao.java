@@ -32,13 +32,13 @@ public interface PoiDao {
   @Delete
   Single<Integer> delete(Poi... pois);
 
-  //three queries? What to do with LiveData or Single?
+  //three queries needed?
+  @Query("SELECT * FROM Poi WHERE itinerary_id = :itineraryId")
+  LiveData<List<Poi>> selectBYPoiId(Long itineraryId);
+
   @Transaction
   @Query("SELECT * FROM Poi ORDER BY name")
   LiveData<List<PoiWithItinerary>> selectAll();
-
-  @Query("SELECT * FROM Poi WHERE itinerary_id = :itineraryId")
-  Single<List<Poi>> selectBYSourceId(Long itineraryId);
 
   @Transaction
   @Query("SELECT * FROM Poi WHERE poi_id = :poiId")

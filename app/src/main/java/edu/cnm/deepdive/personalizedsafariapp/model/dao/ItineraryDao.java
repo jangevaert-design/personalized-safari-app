@@ -9,6 +9,7 @@ import androidx.room.Query;
 import androidx.room.Transaction;
 import androidx.room.Update;
 import edu.cnm.deepdive.personalizedsafariapp.model.entity.Itinerary;
+import edu.cnm.deepdive.personalizedsafariapp.model.entity.Poi;
 import edu.cnm.deepdive.personalizedsafariapp.model.pojo.ItineraryWithPoi;
 import io.reactivex.Single;
 import java.util.Collection;
@@ -31,6 +32,9 @@ public interface ItineraryDao {
   @Delete
   Single<Integer> delete(Itinerary... itineraries);
 
+  @Query("SELECT * FROM Itinerary WHERE itinerary_id = :itineraryId")
+  LiveData<List<Itinerary>> selectBYItineraryId(long itineraryId);
+
 
   @Transaction
   @Query("SELECT * FROM Itinerary ORDER BY parkName")
@@ -38,8 +42,8 @@ public interface ItineraryDao {
 
 
   @Transaction
-  @Query("SELECT * FROM Itinerary WHERE itinerary_id = :ItineraryId")
-  Single<ItineraryWithPoi> selectById(long ItineraryId);
+  @Query("SELECT * FROM Itinerary WHERE itinerary_id = :itineraryId")
+  Single<ItineraryWithPoi> selectById(long itineraryId);
 
 
 }
