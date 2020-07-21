@@ -31,7 +31,6 @@ public interface PoiDao {
   @Delete
   Single<Integer> delete(Poi... pois);
 
-  //three queries needed?
   @Query("SELECT * FROM Poi WHERE itinerary_id = :itineraryId")
   LiveData<List<Poi>> selectBYPoiId(Long itineraryId);
 

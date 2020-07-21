@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/frameLayout"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:padding="4dp"
+  tools:context=".controller.NavigationActivity"
+  android:background="#F3DA8E">
+
+  <TextView
+    android:id="@+id/title"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    android:text="What do you wanna do?"
+    android:textSize="25sp"
+    app:layout_constraintVertical_chainStyle="packed"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintBottom_toTopOf="@id/itinerary"/>
+  <Button
+    android:id="@+id/itinerary"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:text="Itinerary"
+    android:textSize="20dp"
+    app:layout_constraintBottom_toTopOf="@id/accommodation"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/title"/>
+
+  <Button
+    android:id="@+id/accommodation"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:text="Accommodation"
+    android:textSize="20dp"
+    app:layout_constraintBottom_toTopOf="@id/points_of_interest"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/itinerary"/>
+
+  <Button
+    android:id="@+id/points_of_interest"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:text="Points of Interest"
+    android:textSize="20dp"
+    app:layout_constraintBottom_toTopOf="@id/about"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/accommodation"/>
+
+  <Button
+    android:id="@+id/about"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:text="About"
+    android:textSize="20dp"
+    app:layout_constraintBottom_toTopOf="@id/fauna_and_flora"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/points_of_interest"/>
+
+  <Button
+    android:id="@+id/fauna_and_flora"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:text="Fauna and Flora"
+    android:textSize="20dp"
+    app:layout_constraintBottom_toTopOf="@id/general_information"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/about"/>
+
+  <Button
+    android:id="@+id/general_information"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:text="General Information"
+    android:textSize="20dp"
+    app:layout_constraintBottom_toTopOf="@id/rotating_image"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/fauna_and_flora"/>
+
+  <ImageView
+    android:id="@+id/rotating_image"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:scaleType="fitCenter"
+    android:adjustViewBounds="true"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/general_information"
+    app:layout_constraintBottom_toBottomOf="parent"
+    android:src="@drawable/anim_slideshow"
+    />
+</androidx.constraintlayout.widget.ConstraintLayout>

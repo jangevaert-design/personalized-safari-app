@@ -19,7 +19,7 @@ public interface AccommodationDao {
   Single<Long> insert(Accommodation accommodation);
 
   @Insert(onConflict = OnConflictStrategy.IGNORE)
-  Single<List<Long>> insert(Collection<Accommodation> quotes);
+  Single<List<Long>> insert(Collection<Accommodation> accommodations);
 
   @Update
   Single<Integer> update(Accommodation... accommodations);

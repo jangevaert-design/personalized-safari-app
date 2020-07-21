@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <item
+    android:duration="4000"
+    android:drawable="@drawable/angry_lion"/>
+
+  <item
+    android:duration="4000"
+    android:drawable="@drawable/beautiful_sunset"/>
+
+  <item
+    android:duration="4000"
+    android:drawable="@drawable/crane_birds"/>
+
+  <item
+    android:duration="4000"
+    android:drawable="@drawable/red_and_yellow_barbet"/>
+
+  <item
+    android:duration="4000"
+    android:drawable="@drawable/young_babboon"/>
+
+</animation-list>
