@@ -7,7 +7,8 @@
   android:layout_width="match_parent"
   android:layout_height="match_parent"
   android:padding="8dp"
-  tools:context=".controller.NavigationActivity">
+  tools:context=".controller.NavigationActivity"
+  android:background="@color/background_color_all_screens">
 
   <TextView
     android:id="@+id/text_view_date"
@@ -15,6 +16,7 @@
     android:layout_height="wrap_content"
     android:text="date"
     android:textSize="20dp"
+    android:textColor="@color/text_color_main_activity"
     app:layout_constraintVertical_chainStyle="spread_inside"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
@@ -27,6 +29,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="Let's go user"
+    android:textColor="#807562"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintEnd_toEndOf="parent"

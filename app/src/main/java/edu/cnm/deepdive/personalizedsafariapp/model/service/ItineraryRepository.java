@@ -7,8 +7,10 @@ import edu.cnm.deepdive.personalizedsafariapp.model.dao.PoiDao;
 import edu.cnm.deepdive.personalizedsafariapp.model.entity.Itinerary;
 import edu.cnm.deepdive.personalizedsafariapp.model.pojo.ItineraryWithPoi;
 import io.reactivex.Completable;
+import io.reactivex.Maybe;
 import io.reactivex.Single;
 import io.reactivex.schedulers.Schedulers;
+import java.util.Date;
 import java.util.List;
 
 public class ItineraryRepository {
@@ -32,6 +34,10 @@ public class ItineraryRepository {
 
   public Single<ItineraryWithPoi> get(long id) {
     return itineraryDao.selectById(id)
+        .subscribeOn(Schedulers.io());
+  }
+  public Maybe<ItineraryWithPoi> get(Date date) {
+    return itineraryDao.selectByDate(date)
         .subscribeOn(Schedulers.io());
   }
 

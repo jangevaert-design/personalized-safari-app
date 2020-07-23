@@ -66,4 +66,9 @@ dependencies {
 
 // Stetho (inspection) dependency
     implementation 'com.facebook.stetho:stetho:1.5.1'
+
+// Gson dependency
+    implementation 'com.google.code.gson:gson:2.8.6'
 }
+
+

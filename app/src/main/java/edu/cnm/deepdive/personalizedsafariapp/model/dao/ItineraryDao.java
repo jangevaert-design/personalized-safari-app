@@ -11,8 +11,10 @@ import androidx.room.Update;
 import edu.cnm.deepdive.personalizedsafariapp.model.entity.Itinerary;
 import edu.cnm.deepdive.personalizedsafariapp.model.entity.Poi;
 import edu.cnm.deepdive.personalizedsafariapp.model.pojo.ItineraryWithPoi;
+import io.reactivex.Maybe;
 import io.reactivex.Single;
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 
 
@@ -24,7 +26,7 @@ public interface ItineraryDao {
   Single<Long> insert(Itinerary itinerary);
 
   @Insert(onConflict = OnConflictStrategy.IGNORE)
-  Single<List<Long>> insert(Collection<Itinerary> itineraries);
+  Single<List<Long>> insert(Collection<? extends Itinerary> itineraries);
 
   @Update
   Single<Integer> update(Itinerary... itineraries);
@@ -44,6 +46,10 @@ public interface ItineraryDao {
   @Transaction
   @Query("SELECT * FROM Itinerary WHERE itinerary_id = :itineraryId")
   Single<ItineraryWithPoi> selectById(long itineraryId);
+
+  @Transaction
+  @Query("SELECT * FROM Itinerary WHERE start <= :date AND `end` >= :date")
+  Maybe<ItineraryWithPoi> selectByDate(Date date);
 
 
 }

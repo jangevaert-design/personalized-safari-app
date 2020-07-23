@@ -21,7 +21,7 @@ public class Poi {
   private long id;
 
   @ColumnInfo(name = "itinerary_id", index = true)
-  private long itineraryId;
+  private Long itineraryId;
 
   @NonNull
   @ColumnInfo(collate = ColumnInfo.NOCASE)

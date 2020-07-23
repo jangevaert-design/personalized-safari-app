@@ -8,14 +8,13 @@ import java.util.List;
 public class PoiWithItinerary extends Poi {
 
   @Relation(entity = Itinerary.class, entityColumn = "itinerary_id", parentColumn = "itinerary_id")
-  private List<Itinerary> itineraries;
+  private Itinerary itinerary;
 
-  public List<Itinerary> getItineraries() {
-    return itineraries;
+  public Itinerary getItinerary() {
+    return itinerary;
   }
 
-  public void setItineraries(List<Itinerary> itineraries) {
-    this.itineraries = itineraries;
+  public void setItinerary(Itinerary itinerary) {
+    this.itinerary = itinerary;
   }
-
 }

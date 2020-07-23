@@ -14,7 +14,7 @@ public class Itinerary {
   @ColumnInfo(name = "itinerary_id")
   private long id;
 
-  @NonNull
+
   @ColumnInfo(collate = ColumnInfo.NOCASE)
   private String parkName = "";
 

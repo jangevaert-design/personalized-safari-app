@@ -1,10 +1,13 @@
 package edu.cnm.deepdive.personalizedsafariapp.model.service;
 
 import android.content.Context;
+import androidx.lifecycle.LiveData;
 import edu.cnm.deepdive.personalizedsafariapp.model.dao.GeneralDao;
+import edu.cnm.deepdive.personalizedsafariapp.model.entity.Accommodation;
 import edu.cnm.deepdive.personalizedsafariapp.model.entity.General;
 import io.reactivex.Completable;
 import io.reactivex.schedulers.Schedulers;
+import java.util.List;
 
 public class GeneralRepository {
 
@@ -18,6 +21,9 @@ public class GeneralRepository {
     generalDao = database.getGeneralDao();
   }
 
+  public LiveData<List<General>> getAll() {
+    return generalDao.selectAll();
+  }
 
   public Completable save(General general) {
     if (general.getId() == 0) {

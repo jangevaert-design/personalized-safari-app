@@ -5,13 +5,14 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  tools:context=".controller.PointsOfInterestActivity">
+  tools:context=".controller.PointsOfInterestActivity"
+  android:background="@color/background_color_all_screens">
 
   <TextView
     android:id="@+id/text_points_of_interest"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="this the 'points_of_interest' screen"
+    android:text="this is the 'points_of_interest' screen"
     android:textSize="20dp"
     app:layout_constraintVertical_chainStyle="spread_inside"
     app:layout_constraintStart_toStartOf="parent"

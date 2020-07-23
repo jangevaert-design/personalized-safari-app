@@ -1,0 +1,72 @@
+[
+  {
+    "location": "Mto wa Mbu",
+    "parkName": "Lake Manyara National Park",
+    "start": "2020-08-03T08:00+0300",
+    "end": "2020-08-04T08:00+0300",
+    "distance": null,
+    "pointsOfInterest": [
+      {
+        "name": "Local Market",
+        "latitude": null,
+        "latitude": null
+      }
+    ]
+  },
+  {
+    "location": "Ngorongoro Crater",
+    "parkName": "Ngorongoro Conservation Area",
+    "start": "2020-08-04T08:01+0300",
+    "end": "2020-08-05T08:00+0300",
+    "distance": null,
+    "pointsOfInterest": [
+      {
+        "name": "Lake Magadi",
+        "latitude": null,
+        "latitude": null
+      }
+    ]
+  },
+  {
+    "location": "Mara and Simiyu",
+    "parkName": "Serengeti National Park",
+    "start": "2020-08-05T08:01+0300",
+    "end": "2020-08-06T08:00+0300",
+    "distance": null,
+    "pointsOfInterest": [
+      {
+        "name": "Olduvai Gorge",
+        "latitude": null,
+        "latitude": null
+      }
+    ]
+  },
+  {
+    "location": "Mara and Simiyu",
+    "parkName": "Serengeti National Park",
+    "start": "2020-08-06T08:01+0300",
+    "end": "2020-08-07T08:00+0300",
+    "distance": null,
+    "pointsOfInterest": [
+      {
+        "name": "Moru Kopjes",
+        "latitude": null,
+        "latitude": null
+      }
+    ]
+  },
+  {
+    "location": "Manyara Region",
+    "parkName": "Tarangire National Park",
+    "start": "2020-08-07T08:01+0300",
+    "end": "2020-08-08T08:00+0300",
+    "distance": null,
+    "pointsOfInterest": [
+      {
+        "name": "Tarangire River and Swamps",
+        "latitude": null,
+        "latitude": null
+      }
+    ]
+  }
+]
