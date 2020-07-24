@@ -22,8 +22,6 @@ import edu.cnm.deepdive.personalizedsafariapp.model.entity.General;
 import edu.cnm.deepdive.personalizedsafariapp.model.entity.Itinerary;
 import edu.cnm.deepdive.personalizedsafariapp.model.entity.Poi;
 import edu.cnm.deepdive.personalizedsafariapp.model.pojo.ItineraryWithPoi;
-import edu.cnm.deepdive.personalizedsafariapp.model.pojo.PoiWithItinerary;
-import edu.cnm.deepdive.personalizedsafariapp.model.service.PersonalizedSafariAppDatabase.Callback.Converters;
 import edu.cnm.deepdive.personalizedsafariapp.model.service.PersonalizedSafariAppDatabase.Converters;
 import io.reactivex.schedulers.Schedulers;
 import java.io.IOException;
@@ -88,12 +86,9 @@ public abstract class PersonalizedSafariAppDatabase extends RoomDatabase {
       loadItineraries();
       loadAccommodations();
       loadGeneral();
-      loadPoi();
 
 
     }
-
-
 
 
     private void loadItineraries() {
@@ -104,8 +99,6 @@ public abstract class PersonalizedSafariAppDatabase extends RoomDatabase {
 //        DateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mmZ");
         PersonalizedSafariAppDatabase database = PersonalizedSafariAppDatabase.getInstance();
         // Adding URL's where possible?
-        AccommodationDao accommodationDao = database.getAccommodationDao();
-        GeneralDao generalDao = database.getGeneralDao();
         ItineraryDao itineraryDao = database.getItineraryDao();
         PoiDao poiDao = database.getPoiDao();
 
@@ -147,11 +140,8 @@ public abstract class PersonalizedSafariAppDatabase extends RoomDatabase {
         PersonalizedSafariAppDatabase database = PersonalizedSafariAppDatabase.getInstance();
         // Adding URL's where possible?
         AccommodationDao accommodationDao = database.getAccommodationDao();
-        GeneralDao generalDao = database.getGeneralDao();
-        ItineraryDao itineraryDao = database.getItineraryDao();
-        PoiDao poiDao = database.getPoiDao();
 
-        Type listType = new TypeToken<List<Accommodation>>() { //changed from LinkedList to List
+        Type listType = new TypeToken<LinkedList<Accommodation>>() { //changed from LinkedList to List
         }.getType();
         Gson gson = new GsonBuilder()
             // Set any other options as necessary
@@ -160,20 +150,6 @@ public abstract class PersonalizedSafariAppDatabase extends RoomDatabase {
 
         accommodationDao.insert(accommodations)
             .subscribeOn(Schedulers.io())
-//            .flatMap((ids) -> {
-//              List<Poi> pointsToAdd = new LinkedList<>();
-//              Iterator<Long> idIterator = ids.iterator();
-//              Iterator<ItineraryWithPoi> itineraryIterator = itineraries.iterator();
-//              while (idIterator.hasNext()) {
-//                long id = idIterator.next();
-//                ItineraryWithPoi itin = itineraryIterator.next();
-//                itin.getPoi().forEach((p) -> {
-//                  p.setItineraryId(id);
-//                  pointsToAdd.add(p);
-//                });
-//              }
-//              return poiDao.insert(pointsToAdd);
-//            })
             .subscribe();
       } catch (IOException e) {
         throw new RuntimeException(e);
@@ -189,12 +165,9 @@ public abstract class PersonalizedSafariAppDatabase extends RoomDatabase {
 //        DateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mmZ");
         PersonalizedSafariAppDatabase database = PersonalizedSafariAppDatabase.getInstance();
         // Adding URL's where possible?
-        AccommodationDao accommodationDao = database.getAccommodationDao();
         GeneralDao generalDao = database.getGeneralDao();
-        ItineraryDao itineraryDao = database.getItineraryDao();
-        PoiDao poiDao = database.getPoiDao();
 
-        Type listType = new TypeToken<List<General>>() { //changed from linkedList to List
+        Type listType = new TypeToken<LinkedList<General>>() { //changed from linkedList to List
         }.getType();
         Gson gson = new GsonBuilder()
             // Set any other options as necessary
@@ -202,20 +175,6 @@ public abstract class PersonalizedSafariAppDatabase extends RoomDatabase {
         List<General> general = gson.fromJson(reader, listType);
         generalDao.insert(general)
             .subscribeOn(Schedulers.io())
-//            .flatMap((ids) -> {
-//              List<Poi> pointsToAdd = new LinkedList<>();
-//              Iterator<Long> idIterator = ids.iterator();
-//              Iterator<ItineraryWithPoi> itineraryIterator = itineraries.iterator();
-//              while (idIterator.hasNext()) {
-//                long id = idIterator.next();
-//                ItineraryWithPoi itin = itineraryIterator.next();
-//                itin.getPoi().forEach((p) -> {
-//                  p.setItineraryId(id);
-//                  pointsToAdd.add(p);
-//                });
-//              }
-//              return poiDao.insert(pointsToAdd);
-//            })
             .subscribe();
       } catch (IOException e) {
         throw new RuntimeException(e);
@@ -223,48 +182,7 @@ public abstract class PersonalizedSafariAppDatabase extends RoomDatabase {
 
 
     }
-
-    private void loadPoi() {
-      try (
-          InputStream input = context.getResources().openRawResource(R.raw.points_of_interest);
-          Reader reader = new InputStreamReader(input);
-      ) {
-//        DateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mmZ");
-        PersonalizedSafariAppDatabase database = PersonalizedSafariAppDatabase.getInstance();
-        // Adding URL's where possible?
-        AccommodationDao accommodationDao = database.getAccommodationDao();
-        GeneralDao generalDao = database.getGeneralDao();
-        ItineraryDao itineraryDao = database.getItineraryDao();
-        PoiDao poiDao = database.getPoiDao();
-
-        Type listType = new TypeToken<LinkedList<PoiWithItinerary>>() {
-        }.getType();
-        Gson gson = new GsonBuilder()
-            // Set any other options as necessary
-            .create();
-        List<PoiWithItinerary> pois = gson.fromJson(reader, listType);
-
-        poiDao.insert(pois)
-            .subscribeOn(Schedulers.io())
-            .flatMap((ids) -> {
-              List<Itinerary> itinerariesToAdd = new LinkedList<>();
-              Iterator<Long> idIterator = ids.iterator();
-              Iterator<PoiWithItinerary> poiIterator = pois.iterator();
-              while (idIterator.hasNext()) {
-                long id = idIterator.next();
-                PoiWithItinerary poi = poiIterator.next();
-                poi.getItinerary().forEach((p) -> {
-                  p.setPoiId(id);
-                  itinerariesToAdd.add(p);
-                });
-              }
-              return itineraryDao.insert(itinerariesToAdd);
-            })
-            .subscribe();
-      } catch (IOException e) {
-        throw new RuntimeException(e);
-      }
-    }
+  }
 
     public static class Converters {
 
