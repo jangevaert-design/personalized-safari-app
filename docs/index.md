@@ -50,5 +50,22 @@ list of accommodations.
 
 ### [DDL](https://github.com/jangevaert-design/personalized-safari-app/tree/master/docs/sql)                                                                                             
                                                                                                  
-    
-    
+## Technical requirements, dependencies and permissions
+
+   * **Tested hardware, minimum Android API required, restrictions**
+        >Tested hardware: Pixel 2 emulator and own physical device Samsung Galaxy J7 Star
+         (SM-J737T, 2019).
+        >Minimum Android API required: Android 9 (API level 28) as per [Target API level 
+         requirements](https://support.google.com/googleplay/android-developer/answer/113469#targetsdk)  
+        >Language: This app has not been designed to support multiple locales and will fall back on
+         the default en_US (US English) as per [Android Developers' language and locale resolution
+         overview](https://developer.android.com/guide/topics/resources/multilingual-support)  
+        >Orientation: the app has been only designed for portrait mode due to time restrictions.
+                              
+   * **List of 3<sup>rd</sup>-party libraries**
+        >Androidx, ReactiveX, Room, SQLite, junit and Gson as per "Module library is set via 
+         Project Structure\Project Settings\Modules\Dependencies".
+      
+   * **List of Android permissions**
+        >No normal permissions listed in the manifest, no dangerous - or user sensitive permissions
+         required as per [Android Developers' permission information](https://developer.android.com/guide/topics/permissions/overview).                                                  

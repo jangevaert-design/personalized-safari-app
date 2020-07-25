@@ -6,7 +6,10 @@ import edu.cnm.deepdive.personalizedsafariapp.model.dao.AccommodationDao;
 import edu.cnm.deepdive.personalizedsafariapp.model.entity.Accommodation;
 import edu.cnm.deepdive.personalizedsafariapp.model.pojo.PoiWithItinerary;
 import io.reactivex.Completable;
+import io.reactivex.Maybe;
+import io.reactivex.Single;
 import io.reactivex.schedulers.Schedulers;
+import java.util.Date;
 import java.util.List;
 
 public class AccommodationRepository {
@@ -23,6 +26,15 @@ public class AccommodationRepository {
 
   public LiveData<List<Accommodation>> getAll() {
     return accommodationDao.selectAll();
+  }
+
+  public Single<Accommodation> get(long id) {
+    return accommodationDao.selectById(id)
+        .subscribeOn(Schedulers.io());
+  }
+  public Maybe<Accommodation> get(Date date) {
+    return accommodationDao.selectByDate(date)
+        .subscribeOn(Schedulers.io());
   }
 
 

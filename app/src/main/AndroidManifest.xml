@@ -10,7 +10,7 @@
     android:roundIcon="@mipmap/ic_launcher_round"
     android:supportsRtl="true"
     android:theme="@style/AppTheme">
-    <activity android:name=".controller.FaunaAndFloraActivity">
+    <activity android:name=".controller.WildflifeActivity">
     </activity>
     <activity android:name=".controller.AboutActivity">
     </activity>
@@ -18,7 +18,7 @@
       android:label="What do you wanna do?"
       android:name=".controller.NavigationActivity">
     </activity>
-    <activity android:name=".controller.GeneralInformationActivity">
+    <activity android:name=".controller.GeneralActivity">
     </activity>
     <activity android:name=".controller.PointsOfInterestActivity">
     </activity>

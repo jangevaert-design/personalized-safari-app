@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import edu.cnm.deepdive.personalizedsafariapp.R;
 
-public class GeneralInformationActivity extends AppCompatActivity {
+public class WildflifeActivity extends AppCompatActivity {
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_general_information);
+    setContentView(R.layout.activity_wildlife);
   }
 }

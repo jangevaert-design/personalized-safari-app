@@ -39,8 +39,7 @@ public class ItineraryActivity extends AppCompatActivity  {
     });
     viewModel.getDailyItinerary().observe(this, (itinerary) -> {
      // TODO populate viewobjects in layout with information from itinerary
-//      Log.d(getClass().getName(), itinerary.toString());
-//      Log.d(getClass().getName(), itinerary.getLocation());
+
     });
     viewModel.setDate(new Date()); // this is today's date.
   }
