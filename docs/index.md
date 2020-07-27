@@ -68,4 +68,7 @@ list of accommodations.
       
    * **List of Android permissions**
         >No normal permissions listed in the manifest, no dangerous - or user sensitive permissions
-         required as per [Android Developers' permission information](https://developer.android.com/guide/topics/permissions/overview).                                                  
+         required as per [Android Developers' permission information](https://developer.android.com/guide/topics/permissions/overview). 
+
+## [Copyrights & licenses](https://github.com/jangevaert-design/personalized-safari-app/blob/master/docs/notice.md)
+                                                                                         
