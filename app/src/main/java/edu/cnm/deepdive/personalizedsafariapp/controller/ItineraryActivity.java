@@ -1,46 +1,67 @@
 package edu.cnm.deepdive.personalizedsafariapp.controller;
 
-import android.content.Intent;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 import edu.cnm.deepdive.personalizedsafariapp.R;
-import edu.cnm.deepdive.personalizedsafariapp.model.entity.Itinerary;
 import edu.cnm.deepdive.personalizedsafariapp.view.ItineraryAdapter;
 import edu.cnm.deepdive.personalizedsafariapp.viewmodel.ItineraryViewModel;
 import java.util.Date;
 
-public class ItineraryActivity extends AppCompatActivity  {
+/**
+ * Creates a window to interact with the user on the itinerary part of this app.
+ */
+public class ItineraryActivity extends AppCompatActivity {
 
-
+  /**
+   * The two fields below keep track of the usernames in this project.
+   */
   private ItineraryViewModel viewModel;
   private RecyclerView itineraryList;
 
+
+  /**
+   * The onCreate method is responsible to create the Activity when the Activitity is launched.
+   *
+   * @param savedInstanceState
+   */
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
-
+/**
+ * The setContentView method helps to render our layout to the screen using itineraryList.
+ */
     setContentView(R.layout.activity_itinerary);
     itineraryList = findViewById(R.id.itinerary_list);
-    // TODO Use findViewById to wire the UI together.
 
     viewModel = new ViewModelProvider(this).get(ItineraryViewModel.class);
-    // TODO GET livedata from viewmodel and set observers.
+
+    /**
+     * A method to get data from ItineraryViewModel and observe them within a given lifecycle.
+     */
     viewModel.getItineraries().observe(this, (itineraries) -> {
-      // TODO Create adapter populated with itineraries and set the itineraryList adaptor.
 
       ItineraryAdapter adapter = new ItineraryAdapter(this, itineraries);
       itineraryList.setAdapter(adapter);
     });
+
+    /**
+     * A method to get data that changes daily from ItineraryViewModel and observe them within
+     * a given lifecycle.
+     */
     viewModel.getDailyItinerary().observe(this, (itinerary) -> {
-     // TODO populate viewobjects in layout with information from itinerary
+
+      /**
+       * A method to set the date in ItineraryViewModel.
+       */
 
     });
+
+    /**
+     * A method to set the date in AccommodationViewModel.
+     */
     viewModel.setDate(new Date()); // this is today's date.
   }
 }

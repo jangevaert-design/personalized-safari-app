@@ -13,14 +13,24 @@ import io.reactivex.schedulers.Schedulers;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * The ItineraryRepository handles the data operations related to the itinerary colums in
+ * the datebase
+ */
 public class ItineraryRepository {
 
-
+  /**
+   * The four fields below keep track of the usernames in this project.
+   */
   private final Context context;
   private final PersonalizedSafariAppDatabase database;
   private final PoiDao poiDao;
   private final ItineraryDao itineraryDao;
 
+  /**
+   * This is the constructor for the ItineraryRepository.
+   * @param context
+   */
   public ItineraryRepository(Context context) {
     this.context = context;
     database = PersonalizedSafariAppDatabase.getInstance();

@@ -6,6 +6,9 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+/**
+ * Works as an object wrapper for the General specifications in the database table.
+ */
 @Entity
 public class General {
 

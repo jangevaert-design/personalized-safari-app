@@ -63,7 +63,7 @@ list of accommodations.
         >Orientation: the app has been only designed for portrait mode due to time restrictions.
                               
    * **List of 3<sup>rd</sup>-party libraries**
-        >Androidx, ReactiveX, Room, SQLite, junit and Gson as per "Module library is set via 
+        >Androidx, ReactiveX, Room, SQLite, Stetho, junit and Gson as per "Module library is set via 
          Project Structure\Project Settings\Modules\Dependencies".
       
    * **List of Android permissions**

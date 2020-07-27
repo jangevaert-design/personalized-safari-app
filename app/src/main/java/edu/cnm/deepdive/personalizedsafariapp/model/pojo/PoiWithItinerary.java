@@ -3,8 +3,11 @@ package edu.cnm.deepdive.personalizedsafariapp.model.pojo;
 import androidx.room.Relation;
 import edu.cnm.deepdive.personalizedsafariapp.model.entity.Itinerary;
 import edu.cnm.deepdive.personalizedsafariapp.model.entity.Poi;
-import java.util.List;
 
+
+/**
+ * This pojo is created to increase the readability and re-usability of the program.
+ */
 public class PoiWithItinerary extends Poi {
 
   @Relation(entity = Itinerary.class, entityColumn = "itinerary_id", parentColumn = "itinerary_id")

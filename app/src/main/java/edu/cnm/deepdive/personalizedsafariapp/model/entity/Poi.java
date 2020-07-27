@@ -14,6 +14,11 @@ import androidx.room.PrimaryKey;
         onDelete = ForeignKey.SET_NULL
     )
 )
+
+/**
+ * Works as an object wrapper for the PointsOfInterest specifications in the database
+ * table.
+ */
 public class Poi {
 
   @PrimaryKey(autoGenerate = true)

@@ -11,11 +11,21 @@ import edu.cnm.deepdive.personalizedsafariapp.R;
 import java.text.DateFormat;
 import java.util.Calendar;
 
+/**
+ * Creates a window to interact with the user as the start point of this app
+ */
 public class MainActivity extends AppCompatActivity {
 
-
+  /**
+   * The field below keep track of the usernames in this project.
+   */
   private Button button;
 
+  /**
+   * the onCreate method is responsible to create the Activity when the Activitity is launched.
+   *
+   * @param savedInstanceState
+   */
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -35,6 +45,10 @@ public class MainActivity extends AppCompatActivity {
 
   }
 
+  /**
+   * The intent below describes the action (go to NavigationActivity which should be performed and
+   * provide data upon which such an action should be done.
+   */
   public void openNavigationActivity() {
     Intent intent = new Intent(this, NavigationActivity.class);
     startActivity(intent);

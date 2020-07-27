@@ -6,6 +6,10 @@ import edu.cnm.deepdive.personalizedsafariapp.model.entity.Itinerary;
 import edu.cnm.deepdive.personalizedsafariapp.model.entity.Poi;
 import java.util.List;
 
+
+/**
+ * This pojo is created to increase the readability and re-usability of the program.
+ */
 public class ItineraryWithPoi extends Itinerary {
 
   @SerializedName("pointsOfInterest")

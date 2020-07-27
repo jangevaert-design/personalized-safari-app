@@ -22,7 +22,7 @@ public class ItineraryViewModel extends AndroidViewModel {
     dailyItinerary = new MutableLiveData<>();
     throwable = new MutableLiveData<>();
   }
-  // TODO Add some livedata that holds itinerary data plus methods to observe them.
+
 
   public LiveData<List<ItineraryWithPoi>> getItineraries () {
     return itineraryRepository.getAll();

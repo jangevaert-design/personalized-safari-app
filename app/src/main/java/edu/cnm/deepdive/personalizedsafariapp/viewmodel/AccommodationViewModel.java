@@ -23,7 +23,7 @@ public class AccommodationViewModel extends AndroidViewModel {
     dailyAccommodation = new MutableLiveData<>();
     throwable = new MutableLiveData<>();
   }
-  // TODO Add some livedata that holds itinerary data plus methods to observe them.
+
 
   public LiveData<List<Accommodation>> getAccommodations () {
     return accommodationRepository.getAll();

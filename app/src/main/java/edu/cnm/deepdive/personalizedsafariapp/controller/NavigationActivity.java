@@ -9,10 +9,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import edu.cnm.deepdive.personalizedsafariapp.R;
 
+/**
+ * Creates a window to interact with the user in order to navigate through this app
+ */
 public class NavigationActivity extends AppCompatActivity implements View.OnClickListener {
 
+  /**
+   * The field below keep track of the usernames in this project.
+   */
   private Button button;
 
+  /**
+   * the onCreate method is responsible to create the Activity when the Activitity is launched.
+   *
+   * @param savedInstanceState
+   */
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -21,8 +32,6 @@ public class NavigationActivity extends AppCompatActivity implements View.OnClic
     ImageView imageView = findViewById(R.id.rotating_image);
     AnimationDrawable animationDrawable = (AnimationDrawable) imageView.getDrawable();
     animationDrawable.start();
-
-
 
     Button button1 = findViewById(R.id.itinerary);
     Button button2 = findViewById(R.id.accommodation);
@@ -46,7 +55,7 @@ public class NavigationActivity extends AppCompatActivity implements View.OnClic
       case R.id.accommodation:
         intent = new Intent(this, AccommodationActivity.class);
         break;
-      case R.id.points_of_interest :
+      case R.id.points_of_interest:
         intent = new Intent(this, PointsOfInterestActivity.class);
         break;
       default:  //case R.id.general:

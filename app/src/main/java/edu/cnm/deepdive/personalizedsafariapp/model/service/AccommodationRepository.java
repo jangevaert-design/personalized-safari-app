@@ -4,7 +4,6 @@ import android.content.Context;
 import androidx.lifecycle.LiveData;
 import edu.cnm.deepdive.personalizedsafariapp.model.dao.AccommodationDao;
 import edu.cnm.deepdive.personalizedsafariapp.model.entity.Accommodation;
-import edu.cnm.deepdive.personalizedsafariapp.model.pojo.PoiWithItinerary;
 import io.reactivex.Completable;
 import io.reactivex.Maybe;
 import io.reactivex.Single;
@@ -12,12 +11,24 @@ import io.reactivex.schedulers.Schedulers;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * The AccommodationRepository handles the data operations related to the accommodation columns in
+ * the datebase
+ */
 public class AccommodationRepository {
 
+
+  /**
+   * The three fields below keep track of the usernames in this project.
+   */
   private final Context context;
   private final PersonalizedSafariAppDatabase database;
   private final AccommodationDao accommodationDao;
 
+  /**
+   * This is the constructor for the AccommodationRepository.
+   * @param context
+   */
   public AccommodationRepository(Context context) {
     this.context = context;
     database = PersonalizedSafariAppDatabase.getInstance();

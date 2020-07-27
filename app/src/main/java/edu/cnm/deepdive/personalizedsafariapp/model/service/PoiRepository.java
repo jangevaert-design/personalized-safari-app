@@ -11,14 +11,25 @@ import io.reactivex.Single;
 import io.reactivex.schedulers.Schedulers;
 import java.util.List;
 
+
+/**
+ * The PoiRepository handles the data operations related to the point of interest columns in
+ * the datebase
+ */
 public class PoiRepository {
 
-
+  /**
+   * The four fields below keep track of the usernames in this project.
+   */
   private final Context context;
   private final PersonalizedSafariAppDatabase database;
   private final ItineraryDao itineraryDao;
   private final PoiDao poiDao;
 
+  /**
+   * This is the constructor for the PoiRepository.
+   * @param context
+   */
   public PoiRepository(Context context) {
     this.context = context;
     database = PersonalizedSafariAppDatabase.getInstance();
