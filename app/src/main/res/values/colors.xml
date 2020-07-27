@@ -6,4 +6,5 @@
   <color name="background_color_all_screens">#f3e2ab</color>
   <color name="text_color_main_activity">#807562</color>
   <color name="text_color_buttons_navigation_activity">#807562</color>
+  <color name="card_view_color">#dcd0b8</color>
 </resources>

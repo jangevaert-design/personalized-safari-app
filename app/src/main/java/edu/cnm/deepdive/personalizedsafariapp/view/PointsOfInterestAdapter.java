@@ -8,10 +8,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import edu.cnm.deepdive.personalizedsafariapp.R;
+import edu.cnm.deepdive.personalizedsafariapp.model.entity.Itinerary;
 import edu.cnm.deepdive.personalizedsafariapp.model.entity.Poi;
 import edu.cnm.deepdive.personalizedsafariapp.model.pojo.PoiWithItinerary;
 import edu.cnm.deepdive.personalizedsafariapp.view.PointsOfInterestAdapter.Holder;
 import java.text.DateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class PointsOfInterestAdapter extends RecyclerView.Adapter<Holder> {
@@ -69,13 +71,18 @@ public class PointsOfInterestAdapter extends RecyclerView.Adapter<Holder> {
     }
 
     private void bind(int position) {
-      Poi poi = pois.get(position);
+      PoiWithItinerary poi = pois.get(position);
       name.setText(poi.getName());
       longitude.setText(String.format("%.6f", poi.getLongitude()));
       latitude.setText(String.format("%.6f", poi.getLatitude()));
-//      start.setText(String.format(DATETIME_CONCAT, dateFormat.format(poi.getStart()), timeFormat.format(poi.getStart())));
-//      end.setText(String.format(DATETIME_CONCAT, dateFormat.format(poi.getEnd()), timeFormat.format(poi.getEnd())));
-      // TODO is the date linked to Itinerary or through the pojos?
+      Itinerary itinerary = poi.getItinerary();
+      Date start = itinerary.getStart();
+      this.start.setText(String.format(DATETIME_CONCAT, dateFormat.format(start), timeFormat.format(
+          start)));
+      Date end = itinerary.getEnd();
+      this.end.setText(String.format(DATETIME_CONCAT, dateFormat.format(end), timeFormat.format(
+          end)));
+
 
     }
   }

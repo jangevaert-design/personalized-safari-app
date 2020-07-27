@@ -6,7 +6,7 @@
   android:id="@+id/frameLayout"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  android:padding="8dp"
+  android:padding="@dimen/half_dimen"
   tools:context=".controller.NavigationActivity"
   android:background="@color/background_color_all_screens">
 

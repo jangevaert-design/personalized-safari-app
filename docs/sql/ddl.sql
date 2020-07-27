@@ -7,7 +7,6 @@ CREATE TABLE IF NOT EXISTS `Accommodation`
     `longitude`        REAL,
     `latitude`         REAL
 );
-
 CREATE TABLE IF NOT EXISTS `General`
 (
     `general_id`  INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
@@ -15,24 +14,25 @@ CREATE TABLE IF NOT EXISTS `General`
     `wildlife`    TEXT                              NOT NULL COLLATE NOCASE,
     `packingList` TEXT                              NOT NULL COLLATE NOCASE,
     `advice`      TEXT                              NOT NULL COLLATE NOCASE
-);
-
+)
 CREATE TABLE IF NOT EXISTS `Itinerary`
 (
     `itinerary_id`  INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-    `parkName`      TEXT                              NOT NULL COLLATE NOCASE,
+    `parkName`      TEXT COLLATE NOCASE,
     `numberOfMiles` INTEGER,
     `start`         INTEGER                           NOT NULL,
     `end`           INTEGER                           NOT NULL,
     `location`      TEXT                              NOT NULL COLLATE NOCASE
 );
-
 CREATE TABLE IF NOT EXISTS `Poi`
 (
     `poi_id`       INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-    `itinerary_id` INTEGER                           NOT NULL,
+    `itinerary_id` INTEGER,
     `name`         TEXT                              NOT NULL COLLATE NOCASE,
     `longitude`    REAL,
     `latitude`     REAL,
     FOREIGN KEY (`itinerary_id`) REFERENCES `Itinerary` (`itinerary_id`) ON UPDATE NO ACTION ON DELETE SET NULL
-)
+);
+
+
+

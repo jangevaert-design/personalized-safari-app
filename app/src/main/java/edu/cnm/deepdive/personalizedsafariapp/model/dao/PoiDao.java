@@ -72,7 +72,7 @@ public interface PoiDao {
    * @return
    */
   @Transaction
-  @Query("SELECT * FROM Poi ORDER BY name")
+  @Query("SELECT p.* FROM Poi AS p LEFT JOIN ITINERARY AS i ON i.itinerary_id = p.itinerary_id ORDER BY i.start, i.`end`")
   LiveData<List<PoiWithItinerary>> selectAll();
 
   /**

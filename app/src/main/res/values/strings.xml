@@ -6,4 +6,5 @@
 
   <string name="login_failure">Unable to sign in with the provided credentials.</string>
   <string name="sign_out">Sign out</string>
+  <string name="lets_go">Let\'s go %s!</string>
 </resources>

@@ -4,4 +4,8 @@
   <dimen name="activity_vertical_margin">16dp</dimen>
   <dimen name="fab_margin">16dp</dimen>
   <dimen name="login_button_padding">8dp</dimen>
+  <dimen name="full_dimen">16dp</dimen>
+  <dimen name="half_dimen">8dp</dimen>
+  <dimen name="quarter_dimen">4dp</dimen>
+
 </resources>

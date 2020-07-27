@@ -4,7 +4,7 @@
   android:layout_width="match_parent"
   android:layout_height="wrap_content"
   xmlns:app="http://schemas.android.com/apk/res-auto"
-  android:padding="8dp">
+  android:padding="@dimen/half_dimen">
 
 
   <TextView
@@ -12,17 +12,18 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:textSize="20sp"
-    android:layout_margin="8dp"
+    android:layout_margin="@dimen/half_dimen"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintBottom_toTopOf="@id/wildlife"/>
+    app:layout_constraintBottom_toTopOf="@id/wildlife"
+    app:layout_constraintVertical_chainStyle="spread_inside"/>
 
   <TextView
     android:id="@+id/wildlife"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:textSize="20sp"
-    android:layout_margin="8dp"
+    android:layout_margin="@dimen/half_dimen"
     app:layout_constraintTop_toBottomOf="@id/country"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintBottom_toTopOf="@id/packing_list"/>
@@ -32,7 +33,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:textSize="20sp"
-    android:layout_margin="8dp"
+    android:layout_margin="@dimen/half_dimen"
     app:layout_constraintTop_toBottomOf="@id/wildlife"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintBottom_toTopOf="@id/advice"/>
@@ -42,7 +43,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:textSize="20sp"
-    android:layout_margin="8dp"
+    android:layout_margin="@dimen/half_dimen"
     app:layout_constraintTop_toBottomOf="@id/packing_list"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintBottom_toBottomOf="parent"/>

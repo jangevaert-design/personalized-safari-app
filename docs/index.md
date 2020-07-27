@@ -32,15 +32,9 @@ list of accommodations.
           out of our holiday.
 
         
-## Wireframe Diagram      
-        
-   [Wireframe diagram](wireframe.md)
+## [Wireframe Diagram](wireframe.md)   
      
-## Entity-Relationship Diagram (ERD)
-
-   [Entity-relationship diagram](erd.md)
-     
-
+## [Entity-Relationship Diagram (ERD)](erd.md)
                                                                                                  
 ### [Entity classes](https://github.com/jangevaert-design/personalized-safari-app/tree/master/app/src/main/java/edu/cnm/deepdive/personalizedsafariapp/model/entity)
         

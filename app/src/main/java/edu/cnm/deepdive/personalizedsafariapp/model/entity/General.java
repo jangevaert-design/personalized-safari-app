@@ -7,7 +7,7 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 /**
- * Works as an object wrapper for the General specifications in the database table.
+ * Encapsulates some piece of general information details that are useful for the traveler.
  */
 @Entity
 public class General {
@@ -25,17 +25,24 @@ public class General {
   private String wildlife = "";
 
   @NonNull
-  @ColumnInfo(collate = ColumnInfo.NOCASE)
+  @ColumnInfo(name = "packing_list", collate = ColumnInfo.NOCASE)
   private String packingList = "";
 
   @NonNull
   @ColumnInfo(collate = ColumnInfo.NOCASE)
   private String advice = "";
 
+  /**
+   * Returns the Room-assigned primary key identifier for this instance.
+   */
   public long getId() {
     return id;
   }
 
+  /**
+   * Assigns the primary key identifier to this instance. Normally this method is invoked by the
+   * Room library.
+   */
   public void setId(long id) {
     this.id = id;
   }
@@ -63,7 +70,7 @@ public class General {
     return packingList;
   }
 
-  public void setPackingList(@NonNull String packing_list) {
+  public void setPackingList(@NonNull String packingList) {
     this.packingList = packingList;
   }
 
