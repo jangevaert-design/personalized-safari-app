@@ -7,13 +7,16 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.RecyclerView.ViewHolder;
 import edu.cnm.deepdive.personalizedsafariapp.R;
 import edu.cnm.deepdive.personalizedsafariapp.model.entity.Accommodation;
 import edu.cnm.deepdive.personalizedsafariapp.view.AccommodationAdapter.Holder;
 import java.text.DateFormat;
 import java.util.List;
 
+/**
+ * This Adapter class acts as a bridge between the its underlying data and the
+ * AccommodationViewModel class and is responsible for making a View for each item in the data set.
+ */
 public class AccommodationAdapter extends RecyclerView.Adapter<Holder> {
 
   private static final String DATETIME_CONCAT = "%s %s";
@@ -23,6 +26,10 @@ public class AccommodationAdapter extends RecyclerView.Adapter<Holder> {
   private final DateFormat dateFormat;
   private final DateFormat timeFormat;
 
+  /**
+   * The constructor to initialize objects in the AccommodationAdapter class.
+   * @param context
+   */
   public AccommodationAdapter(Context context,
       List<Accommodation> accommodations) {
     this.context = context;
@@ -31,18 +38,31 @@ public class AccommodationAdapter extends RecyclerView.Adapter<Holder> {
     timeFormat = android.text.format.DateFormat.getTimeFormat(context);
   }
 
-
+  /**
+   * This method creates a new ViewHolder object from item_accommodation whenever the
+   * RecyclerViewModel needs a new one
+   * @param parent
+   * @param viewType
+   */
   @NonNull
   @Override
   public Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
     return new Holder(LayoutInflater.from(context).inflate(R.layout.item_accommodation, parent, false));
   }
 
+  /**
+   * This method takes the ViewHolder object and sets the proper list data for the particular row.
+   * @param holder
+   * @param position
+   */
   @Override
   public void onBindViewHolder(@NonNull Holder holder, int position) {
     holder.bind(position);
   }
 
+  /**
+   * This method gets the length of the accommodations list.
+   */
   @Override
   public int getItemCount() {
     return accommodations.size();
@@ -57,8 +77,10 @@ public class AccommodationAdapter extends RecyclerView.Adapter<Holder> {
     private final TextView end;
 
 
-
-
+    /**
+     * This method holds the item's view.
+     * @param itemView
+     */
     public Holder(@NonNull View itemView) {
       super(itemView);
       name = itemView.findViewById(R.id.name);
@@ -68,6 +90,10 @@ public class AccommodationAdapter extends RecyclerView.Adapter<Holder> {
       end = itemView.findViewById(R.id.end);
     }
 
+    /**
+     * This bind method is setting a property value for calling the setText method.
+     * @param position
+     */
     private void bind(int position) {
       Accommodation accommodation = accommodations.get(position);
       name.setText(accommodation.getName());

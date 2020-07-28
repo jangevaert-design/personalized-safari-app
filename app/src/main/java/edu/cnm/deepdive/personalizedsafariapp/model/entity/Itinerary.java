@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey;
 import java.util.Date;
 
 /**
- * Works as an object wrapper for the Itinerary specifications in the database table.
+ * Encapsulates some piece of itinerary information details that are useful for the traveler.
  */
 @Entity
 public class Itinerary {

@@ -19,16 +19,13 @@ import java.util.List;
  */
 public class ItineraryRepository {
 
-  /**
-   * The four fields below keep track of the usernames in this project.
-   */
   private final Context context;
   private final PersonalizedSafariAppDatabase database;
   private final PoiDao poiDao;
   private final ItineraryDao itineraryDao;
 
   /**
-   * This is the constructor for the ItineraryRepository.
+   * The constructor to initialize objects in the ItineraryRepository class.
    * @param context
    */
   public ItineraryRepository(Context context) {
@@ -37,20 +34,35 @@ public class ItineraryRepository {
     poiDao = database.getPoiDao();
     itineraryDao = database.getItineraryDao();
   }
-
+  /**
+   * this method gets all the ItineraryWithPoi data from the ItineraryDao
+   */
   public LiveData<List<ItineraryWithPoi>> getAll() {
     return itineraryDao.selectAll();
   }
 
+  /**
+   * This method gets ItineraryWithPoi data by id from the ItineraryDao.
+   * @param id
+   */
   public Single<ItineraryWithPoi> get(long id) {
     return itineraryDao.selectById(id)
         .subscribeOn(Schedulers.io());
   }
+
+  /**
+   * This method gets ItineraryWithPoi data by date from the ItineraryDao.
+   * @param date
+   */
   public Maybe<ItineraryWithPoi> get(Date date) {
     return itineraryDao.selectByDate(date)
         .subscribeOn(Schedulers.io());
   }
 
+  /**
+   * This method saves data regarding itinerary in the database.
+   * @param itinerary
+   */
   public Completable save(Itinerary itinerary) {
     if (itinerary.getId() == 0) {
       return Completable.fromSingle(itineraryDao.insert(itinerary))
@@ -61,7 +73,10 @@ public class ItineraryRepository {
     }
   }
 
-  public Completable delete(Itinerary itinerary) {
+  /**
+   * This method deletes data regarding itinerary in the database.
+   * @param itinerary
+   */  public Completable delete(Itinerary itinerary) {
     if (itinerary.getId() == 0) {
       return Completable.fromAction(() -> {
       })

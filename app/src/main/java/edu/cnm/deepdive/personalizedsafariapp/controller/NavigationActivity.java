@@ -14,9 +14,7 @@ import edu.cnm.deepdive.personalizedsafariapp.R;
  */
 public class NavigationActivity extends AppCompatActivity implements View.OnClickListener {
 
-  /**
-   * The field below keep track of the usernames in this project.
-   */
+
   private Button button;
 
   /**
@@ -45,6 +43,11 @@ public class NavigationActivity extends AppCompatActivity implements View.OnClic
 
   }
 
+  /**
+   * This onClick method listens for a click of one of the four buttons and opens the required
+   * screen through "intent".
+   * @param v
+   */
   @Override
   public void onClick(View v) {
     Intent intent;

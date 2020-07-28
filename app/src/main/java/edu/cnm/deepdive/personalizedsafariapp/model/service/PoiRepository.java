@@ -18,16 +18,14 @@ import java.util.List;
  */
 public class PoiRepository {
 
-  /**
-   * The four fields below keep track of the usernames in this project.
-   */
+
   private final Context context;
   private final PersonalizedSafariAppDatabase database;
   private final ItineraryDao itineraryDao;
   private final PoiDao poiDao;
 
   /**
-   * This is the constructor for the PoiRepository.
+   * The constructor to initialize objects in the PoiRepository class.
    * @param context
    */
   public PoiRepository(Context context) {
@@ -37,16 +35,27 @@ public class PoiRepository {
     poiDao = database.getPoiDao();
 
   }
-
+  /**
+   * this method gets all the PoiWithItinerary data from the PoiDao
+   */
   public LiveData<List<PoiWithItinerary>> getAll() {
     return poiDao.selectAll();
   }
 
+
+  /**
+   * This method gets PoiWithItinerary data by id from the PoiDao.
+   * @param id
+   */
   public Single<PoiWithItinerary> get(long id) {
     return poiDao.selectById(id)
         .subscribeOn(Schedulers.io());
   }
 
+  /**
+   * This method saves data regarding poi in the database.
+   * @param poi
+   */
   public Completable save(Poi poi) {
     if (poi.getId() == 0) {
       return Completable.fromSingle(poiDao.insert(poi))
@@ -57,6 +66,10 @@ public class PoiRepository {
     }
   }
 
+  /**
+   * This method deletes data regarding poi in the database.
+   * @param poi
+   */
   public Completable delete(Poi poi) {
     if (poi.getId() == 0) {
       return Completable.fromAction(() -> {

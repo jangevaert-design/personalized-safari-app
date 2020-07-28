@@ -23,53 +23,41 @@ public interface PoiDao {
 
   /**
    * The implementation of the insert method will insert its parameters into the database.
-   *
    * @param poi
-   * @return
    */
   @Insert(onConflict = OnConflictStrategy.IGNORE)
   Single<Long> insert(Poi poi);
 
   /**
    * The implementation of the insert method will insert its parameters into the database.
-   *
    * @param itineraries
-   * @return
    */
   @Insert(onConflict = OnConflictStrategy.IGNORE)
   Single<List<Long>> insert(Collection<Poi> itineraries);
 
   /**
    * The implementation of the update method will update its parameters into the database.
-   *
    * @param pois
-   * @return
    */
   @Update
   Single<Integer> update(Poi... pois);
 
   /**
    * The implementation of the delete method will delete its parameters into the database.
-   *
    * @param pois
-   * @return
    */
   @Delete
   Single<Integer> delete(Poi... pois);
 
   /**
    * This method allows to select the Points of interest by id in this projects' database.
-   *
-   * @return
    */
   @Query("SELECT * FROM Poi WHERE itinerary_id = :itineraryId")
   LiveData<List<Poi>> selectBYPoiId(Long itineraryId);
 
   /**
    * This transaction works as a set of operations bundled together and handled as a single unit
-   * between the Itinerary and the Poi part of the database.
-   *
-   * @return
+   * between the Itinerary and the Poi part of the database linking ids of both itinerary and poi.
    */
   @Transaction
   @Query("SELECT p.* FROM Poi AS p LEFT JOIN ITINERARY AS i ON i.itinerary_id = p.itinerary_id ORDER BY i.start, i.`end`")
@@ -77,9 +65,7 @@ public interface PoiDao {
 
   /**
    * This transaction works as a set of operations bundled together and handled as a single unit
-   * between the Itinerary and the Poi part of the database.
-   *
-   * @return
+   * between the Itinerary and the Poi part of the database and handles the poiId.
    */
   @Transaction
   @Query("SELECT * FROM Poi WHERE poi_id = :poiId")

@@ -25,50 +25,40 @@ public interface ItineraryDao {
 
   /**
    * The implementation of the insert method will insert its parameters into the database.
-   *
-   * @return
-   * @paramitinerary
    */
   @Insert(onConflict = OnConflictStrategy.IGNORE)
   Single<Long> insert(Itinerary itinerary);
 
   /**
    * The implementation of the insert method will insert its parameters into the database.
-   *
    * @param itineraries
-   * @return
    */
   @Insert(onConflict = OnConflictStrategy.IGNORE)
   Single<List<Long>> insert(Collection<? extends Itinerary> itineraries);
 
   /**
    * The implementation of the update method will update its parameters into the database.
-   *
    * @param itineraries
-   * @return
    */
   @Update
   Single<Integer> update(Itinerary... itineraries);
 
   /**
    * The implementation of the delete method will delete its parameters into the database.
-   *
    * @param itineraries
-   * @return
    */
   @Delete
   Single<Integer> delete(Itinerary... itineraries);
 
   /**
    * This method allows to select the itineraries by id in this projects' database.
-   *
-   * @return
    */
   @Query("SELECT * FROM Itinerary WHERE itinerary_id = :itineraryId")
   LiveData<List<Itinerary>> selectBYItineraryId(long itineraryId);
 
   /**
-   * @return
+   * This transaction works as a set of operations bundled together and handled as a single unit
+   * between the Itinerary and the Poi part of the database and handles the parkName.
    */
   @Transaction
   @Query("SELECT * FROM Itinerary ORDER BY parkName")
@@ -76,9 +66,7 @@ public interface ItineraryDao {
 
   /**
    * This transaction works as a set of operations bundled together and handled as a single unit
-   * between the Itinerary and the Poi part of the database.
-   *
-   * @return
+   * between the Itinerary and the Poi part of the database and handles the itineraryId.
    */
   @Transaction
   @Query("SELECT * FROM Itinerary WHERE itinerary_id = :itineraryId")
@@ -86,9 +74,7 @@ public interface ItineraryDao {
 
   /**
    * This transaction works as a set of operations bundled together and handled as a single unit
-   * between the Itinerary and the Poi part of the database.
-   *
-   * @return
+   * between the Itinerary and the Poi part of the database and handles the start and end date.
    */
   @Transaction
   @Query("SELECT * FROM Itinerary WHERE start <= :date AND `end` >= :date")

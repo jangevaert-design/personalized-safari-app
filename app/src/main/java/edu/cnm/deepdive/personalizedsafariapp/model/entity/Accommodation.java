@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey;
 import java.util.Date;
 
 /**
- * Works as an object wrapper for the Accommodation specifications in the database table.
+ * Encapsulates some piece of the accommodation information details that are useful for the traveler.
  */
 @Entity
 public class Accommodation {

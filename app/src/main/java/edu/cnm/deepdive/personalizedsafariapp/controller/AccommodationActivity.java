@@ -14,9 +14,7 @@ import java.util.Date;
  */
 public class AccommodationActivity extends AppCompatActivity {
 
-  /**
-   * The two fields below keep track of the usernames in this project.
-   */
+
   private AccommodationViewModel viewModel;
   private RecyclerView accommodationList;
 

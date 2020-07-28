@@ -18,15 +18,12 @@ import java.util.List;
 public class AccommodationRepository {
 
 
-  /**
-   * The three fields below keep track of the usernames in this project.
-   */
   private final Context context;
   private final PersonalizedSafariAppDatabase database;
   private final AccommodationDao accommodationDao;
 
   /**
-   * This is the constructor for the AccommodationRepository.
+   * The constructor to initialize objects in the AccommodationRepository class.
    * @param context
    */
   public AccommodationRepository(Context context) {
@@ -35,20 +32,35 @@ public class AccommodationRepository {
     accommodationDao = database.getAccommodationDao();
   }
 
+  /**
+   * this method gets all the Accommodation data from the AccommodationDao
+   */
   public LiveData<List<Accommodation>> getAll() {
     return accommodationDao.selectAll();
   }
 
+  /**
+   * This method gets Accommodation data by id from the AccommodationDao.
+   * @param id
+   */
   public Single<Accommodation> get(long id) {
     return accommodationDao.selectById(id)
         .subscribeOn(Schedulers.io());
   }
+
+  /**
+   * This method gets Accommodation data by date from the AccommodationDao.
+   * @param date
+   */
   public Maybe<Accommodation> get(Date date) {
     return accommodationDao.selectByDate(date)
         .subscribeOn(Schedulers.io());
   }
 
-
+  /**
+   * This method saves data regarding accommodation in the database.
+   * @param accommodation
+   */
   public Completable save(Accommodation accommodation) {
     if (accommodation.getId() == 0) {
       return Completable.fromSingle(accommodationDao.insert(accommodation))
@@ -59,6 +71,10 @@ public class AccommodationRepository {
     }
   }
 
+  /**
+   * This method deletes data regarding accommodation in the database.
+   * @param accommodation
+   */
   public Completable delete(Accommodation accommodation) {
     if (accommodation.getId() == 0) {
       return Completable.fromAction(() -> {

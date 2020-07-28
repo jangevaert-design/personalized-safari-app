@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/frameLayout"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:padding="@dimen/half_dimen"
+  tools:context=".controller.NavigationActivity"
+  android:background="@color/background_color_all_screens">
+
+  <androidx.constraintlayout.widget.Guideline
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/guideline"
+    app:layout_constraintGuide_percent="0.4"
+    android:orientation="vertical"/>
+
+
+  <TextView
+    android:id="@+id/text_view_date"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="date"
+    android:textSize="20dp"
+    android:layout_marginBottom="@dimen/full_dimen"
+    android:textColor="@color/text_color_main_activity"
+    app:layout_constraintVertical_chainStyle="packed"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintEnd_toEndOf="@id/guideline"
+    app:layout_constraintBottom_toTopOf="@id/lets_go_user"
+    />
+
+  <Button
+    android:id="@+id/lets_go_user"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Let's go user"
+    android:textColor="#807562"
+    android:layout_marginTop="@dimen/full_dimen"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/text_view_date"
+    app:layout_constraintEnd_toEndOf="@id/guideline"
+    app:layout_constraintBottom_toBottomOf="parent"
+    />
+
+  <ImageView
+    android:id="@+id/rotating_main_image"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/half_dimen"
+    android:scaleType="centerInside"
+    android:adjustViewBounds="true"
+    app:layout_constraintStart_toStartOf="@id/guideline"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    android:src="@drawable/main_slideshow"
+    />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

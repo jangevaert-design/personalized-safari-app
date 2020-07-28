@@ -13,9 +13,7 @@ import edu.cnm.deepdive.personalizedsafariapp.viewmodel.GeneralViewModel;
  */
 public class GeneralActivity extends AppCompatActivity {
 
-  /**
-   * The two fields below keep track of the usernames in this project.
-   */
+
   private GeneralViewModel viewModel;
   private RecyclerView generalList;
 

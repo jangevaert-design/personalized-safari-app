@@ -21,43 +21,34 @@ public interface GeneralDao {
 
   /**
    * The implementation of the insert method will insert its parameters into the database.
-   *
    * @param general
-   * @return
    */
   @Insert(onConflict = OnConflictStrategy.IGNORE)
   Single<Long> insert(General general);
 
   /**
    * The implementation of the insert method will insert its parameters into the database.
-   *
    * @param generals
-   * @return
    */
   @Insert(onConflict = OnConflictStrategy.IGNORE)
   Single<List<Long>> insert(Collection<General> generals);
 
   /**
    * The implementation of the update method will update its parameters into the database.
-   *
    * @param generals
-   * @return
    */
   @Update
   Single<Integer> update(General... generals);
 
   /**
    * The implementation of the delete method will delete its parameters into the database.
-   *
    * @param generals
-   * @return
    */
   @Delete
   Single<Integer> delete(General... generals);
 
   /**
    * This method allows to read the name of all general topics in this projects' database.
-   *
    * @return
    */
   @Query("SELECT * FROM General")
@@ -66,7 +57,6 @@ public interface GeneralDao {
 
   /**
    * This method allows to select the general topics by id in this projects' database.
-   *
    * @return
    */
   @Query("SELECT * FROM General WHERE general_id = :generalId")

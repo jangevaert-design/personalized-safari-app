@@ -11,12 +11,20 @@ import edu.cnm.deepdive.personalizedsafariapp.model.service.AccommodationReposit
 import java.util.Date;
 import java.util.List;
 
+/**
+ * This AccommodationViewModel class stores and manages UI-related data in a lifecycle
+ * conscious way.
+ */
 public class AccommodationViewModel extends AndroidViewModel {
 
   private final AccommodationRepository accommodationRepository;
   private final MutableLiveData<Accommodation> dailyAccommodation;
   private final MutableLiveData<Throwable> throwable;
 
+  /**
+   * The constructor to initialize objects in the AccommodationViewModel.
+   * @param application
+   */
   public AccommodationViewModel(@NonNull Application application) {
     super(application);
     accommodationRepository = new AccommodationRepository(application);

@@ -6,7 +6,8 @@ import edu.cnm.deepdive.personalizedsafariapp.model.entity.Poi;
 
 
 /**
- * This pojo is created to increase the readability and re-usability of the program.
+ * This pojo is created to increase the readability and re-usability between Points of Interest and
+ * Itinerary.
  */
 public class PoiWithItinerary extends Poi {
 

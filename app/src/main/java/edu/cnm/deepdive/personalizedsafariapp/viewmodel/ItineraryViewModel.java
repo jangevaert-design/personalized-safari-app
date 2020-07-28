@@ -10,12 +10,20 @@ import edu.cnm.deepdive.personalizedsafariapp.model.service.ItineraryRepository;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * This ItineraryViewModel class stores and manages UI-related data in a lifecycle
+ * conscious way.
+ */
 public class ItineraryViewModel extends AndroidViewModel {
 
   private final ItineraryRepository itineraryRepository;
   private final MutableLiveData<ItineraryWithPoi> dailyItinerary;
   private final MutableLiveData<Throwable> throwable;
 
+  /**
+   * The constructor to initialize objects in the ItineraryViewModel.
+   * @param application
+   */
   public ItineraryViewModel(@NonNull Application application) {
     super(application);
     itineraryRepository = new ItineraryRepository(application);

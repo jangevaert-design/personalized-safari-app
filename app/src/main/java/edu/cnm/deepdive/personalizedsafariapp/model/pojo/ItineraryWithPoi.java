@@ -8,7 +8,8 @@ import java.util.List;
 
 
 /**
- * This pojo is created to increase the readability and re-usability of the program.
+ * This pojo is created to increase the readability and re-usability between Itinerary and Points
+ * of Interest.
  */
 public class ItineraryWithPoi extends Itinerary {
 

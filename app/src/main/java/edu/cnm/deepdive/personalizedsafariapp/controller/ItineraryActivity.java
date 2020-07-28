@@ -14,9 +14,7 @@ import java.util.Date;
  */
 public class ItineraryActivity extends AppCompatActivity {
 
-  /**
-   * The two fields below keep track of the usernames in this project.
-   */
+
   private ItineraryViewModel viewModel;
   private RecyclerView itineraryList;
 
@@ -53,14 +51,10 @@ public class ItineraryActivity extends AppCompatActivity {
      */
     viewModel.getDailyItinerary().observe(this, (itinerary) -> {
 
-      /**
-       * A method to set the date in ItineraryViewModel.
-       */
-
     });
 
     /**
-     * A method to set the date in AccommodationViewModel.
+     * A method to set the date in ItineraryViewModel.
      */
     viewModel.setDate(new Date()); // this is today's date.
   }

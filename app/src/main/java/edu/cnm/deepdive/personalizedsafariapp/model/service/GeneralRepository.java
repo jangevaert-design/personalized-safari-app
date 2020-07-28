@@ -15,15 +15,13 @@ import java.util.List;
  */
 public class GeneralRepository {
 
-  /**
-   * The three fields below keep track of the usernames in this project.
-   */
+
   private final Context context;
   private final PersonalizedSafariAppDatabase database;
   private final GeneralDao generalDao;
 
   /**
-   * This is the constructor for the GeneralRepository.
+   * The constructor to initialize objects in the GeneralRepository class.
    * @param context
    */
   public GeneralRepository(Context context) {
@@ -31,11 +29,18 @@ public class GeneralRepository {
     database = PersonalizedSafariAppDatabase.getInstance();
     generalDao = database.getGeneralDao();
   }
-
+  /**
+   * this method gets all the General data from the GeneralDao
+   * @return
+   */
   public LiveData<List<General>> getAll() {
     return generalDao.selectAll();
   }
 
+  /**
+   * This method saves data regarding general in the database.
+   * @param general
+   */
   public Completable save(General general) {
     if (general.getId() == 0) {
       return Completable.fromSingle(generalDao.insert(general))
@@ -46,6 +51,10 @@ public class GeneralRepository {
     }
   }
 
+  /**
+   * This method deletes data regarding general in the database.
+   * @param general
+   */
   public Completable delete(General general) {
     if (general.getId() == 0) {
       return Completable.fromAction(() -> {

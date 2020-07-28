@@ -16,8 +16,8 @@ import androidx.room.PrimaryKey;
 )
 
 /**
- * Works as an object wrapper for the PointsOfInterest specifications in the database
- * table.
+ * Encapsulates some piece of the Points of Interest information details that are useful for the
+ * traveler.
  */
 public class Poi {
 

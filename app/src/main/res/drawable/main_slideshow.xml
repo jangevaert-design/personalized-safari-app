@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <item
+    android:duration="4000"
+    android:drawable="@drawable/reptile"/>
+
+  <item
+    android:duration="4000"
+    android:drawable="@drawable/maasai_jumping"/>
+
+  <item
+    android:duration="4000"
+    android:drawable="@drawable/lazy_lions_in_tree"/>
+
+  <item
+    android:duration="4000"
+    android:drawable="@drawable/impale_males_fighting"/>
+
+  <item
+    android:duration="4000"
+    android:drawable="@drawable/lilac_breasted_roller"/>
+
+</animation-list>
