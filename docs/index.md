@@ -31,6 +31,28 @@ list of accommodations.
           accommodations will look and what we need to bring so that we can get the maximum 
           out of our holiday.
 
+### Summary of current status of the app
+
+>The app is pretty complete for what was required at this time. Google maps has been prepared to run
+on the main screen instead of the slideshow but fails to do so because of a faulty API key.
+For now the app shows the basics of the database but screens need to be updated with more in depth
+information (text as well as images) about the topics accommodation, itinerary, general information
+and points of interest.
+
+>Possible improvements:
+   * if longitude and latitude are null in 'accommodation' and 'itinerary' these fields should be
+     invisible or, even better, not take any space at all.
+   * the color scheme could be better, and I would like to use the matching color table that we have
+     seen in one of our readings.
+     
+>Stretch goals:
+   * Get Google Maps running.
+   * Link the names of the user to the main screen.
+   * Instead of writing the database manually, link it to an API so that different parts of 
+     itineraries can be puzzled together to itineraries of different length and order.
+        
+                                         
+
         
 ### [Wireframe Diagram](wireframe.md)   
      
