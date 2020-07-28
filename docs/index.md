@@ -58,8 +58,7 @@ list of accommodations.
          needed changes. Please check the different layout on those screens.
                               
    * **List of 3<sup>rd</sup>-party libraries**
-        >Androidx, ReactiveX, Room, SQLite, Stetho, junit 
-                                                     >and Gson as per "Module 
+        >Androidx, ReactiveX, Room, SQLite, Stetho, junit and Gson as per "Module 
          library is set via Project Structure\Project Settings\Modules\Dependencies".
       
    * **List of Android permissions**
@@ -72,8 +71,8 @@ list of accommodations.
          Interest.
         >I have been working to get Google Maps on the MainActivity screen instead of the little
          slideshow. Everything is in place (the code in the MainActivity class, the necessary
-         changes in the activity_main_xml file, the dependencies in gradle, the permissions and 
-         meta-data in the AndroidManifest plus the API key in map_api.xml under values in res). 
+         changes in the activity_main.xml file, the dependencies in gradle, the permissions and 
+         meta-data in the AndroidManifest plus the API key in map_api.xml (under values in res). 
          Unfortunately there seems to be something wrong with the API key. No idea how to solve it.                                                                        
          Apart from this issue displaying Google Maps should work.
 
@@ -83,9 +82,9 @@ list of accommodations.
        
    >Clone the repository [here](https://github.com/jangevaert-design/personalized-safari-app).                                                                                        
 
-   >Paste the cloned repository into "get from Version Control".
+   >Paste the cloned repository into "get from Version Control" on IntelliJ.
 
-   >The API key for (the not working) Google Maps has been posted in Learn.
+   >The API key for Google Maps has been posted in Learn but doesn't seem to work.
 
    >Run the app.
 
