@@ -1,0 +1,8 @@
+edu.cnm.deepdive.personalizedsafariapp
+edu.cnm.deepdive.personalizedsafariapp.controller
+edu.cnm.deepdive.personalizedsafariapp.model.dao
+edu.cnm.deepdive.personalizedsafariapp.model.entity
+edu.cnm.deepdive.personalizedsafariapp.model.pojo
+edu.cnm.deepdive.personalizedsafariapp.model.service
+edu.cnm.deepdive.personalizedsafariapp.view
+edu.cnm.deepdive.personalizedsafariapp.viewmodel
