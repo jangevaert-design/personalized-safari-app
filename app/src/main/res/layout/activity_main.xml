@@ -37,7 +37,7 @@
     android:id="@+id/lets_go_user"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="Let's go user"
+    android:text="Let's go Katjoe"
     android:textColor="#807562"
     android:layout_marginTop="@dimen/full_dimen"
     app:layout_constraintStart_toStartOf="parent"

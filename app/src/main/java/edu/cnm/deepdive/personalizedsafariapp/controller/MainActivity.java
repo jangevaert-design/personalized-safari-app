@@ -53,7 +53,7 @@ import java.util.Calendar;
     TextView textViewDate = findViewById(R.id.text_view_date);
     textViewDate.setText(currentDate);
     button = findViewById(R.id.lets_go_user);
-    button.setText(getString(R.string.lets_go, "Nick"));
+    button.setText(getString(R.string.lets_go, "Katjoe"));
     button.setOnClickListener(new OnClickListener() {
       @Override
       public void onClick(View v) {
